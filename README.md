@@ -1,9 +1,25 @@
-# 경제 뉴스 요약봇
+# 📊 Economic News Bot
 
-환율(ExchangeRate-API)과 경제 뉴스(NewsAPI)를 가져와서
-하나의 리포트로 보여주는 초보자용 파이썬 프로젝트입니다.
+ExchangeRate-API와 NewsAPI를 활용한 경제 뉴스 자동 수집 봇입니다.
 
-## 파일 구조
+## ✨ Features
+
+- 실시간 환율 조회
+- USD / EUR / JPY 환율 제공
+- 경제 뉴스 자동 수집
+- 뉴스 리포트 자동 생성
+- 환경변수(.env)를 통한 API KEY 관리
+- 날짜별 리포트 파일 저장
+
+## 🛠 Tech Stack
+
+- Python
+- ExchangeRate-API
+- NewsAPI
+- python-dotenv
+- Git / GitHub
+
+## 📂 Project Structure
 
 ```
 econ_news_bot/
@@ -17,20 +33,27 @@ econ_news_bot/
 └── reports/                 # 실행할 때마다 생성되는 결과 파일 저장 폴더
 ```
 
-## 1. 준비하기
+## 🚀 How to Run
 
-### 1) 패키지 설치
+### 1. Clone repository
+
+```bash
+git clone https://github.com/seunasu0916-ui/econ_news_bot.git
+cd econ_news_bot
+```
+
+### 2. Install packages
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2) API 키 발급
+### 3. Get API keys
 
 - ExchangeRate-API: https://www.exchangerate-api.com 에서 무료 가입 후 키 발급
 - NewsAPI: https://newsapi.org 에서 무료 가입 후 키 발급
 
-### 3) .env 파일 만들기
+### 4. Create `.env` file
 
 `.env.example` 파일을 복사해서 `.env` 파일을 만들고, 발급받은 키를 입력합니다.
 
@@ -43,9 +66,9 @@ EXCHANGE_API_KEY=발급받은_환율_API_키
 NEWS_API_KEY=발급받은_뉴스_API_키
 ```
 
-`.env` 파일은 `.gitignore`에 등록되어 있어 깃허브 등에 절대 올라가지 않습니다.
+`.env` 파일은 `.gitignore`에 등록되어 있어 GitHub 등에 절대 올라가지 않습니다.
 
-## 2. 실행하기
+### 5. Run the bot
 
 ```bash
 python main.py
@@ -55,7 +78,7 @@ python main.py
 1. 터미널에 USD/EUR/JPY의 원화(KRW) 환율과 최신 경제 뉴스 5건이 출력됩니다.
 2. 같은 내용이 `reports/report_YYYYMMDD_HHMMSS.txt` 파일로도 저장됩니다.
 
-## 3. 설정 바꾸기
+## ⚙️ 설정 바꾸기
 
 `config.py` 파일에서 아래 값들을 바꿀 수 있습니다.
 
@@ -63,7 +86,7 @@ python main.py
 - `NEWS_QUERY`: 뉴스 검색 키워드
 - `NEWS_PAGE_SIZE`: 가져올 뉴스 개수
 
-## 참고
+## 📝 참고
 
 - NewsAPI 무료 요금제는 요청 횟수 제한이 있고, `description` 필드를 짧은 요약처럼 사용합니다.
   실제 AI 요약이 아니라 NewsAPI가 제공하는 기사 소개 문구입니다.
